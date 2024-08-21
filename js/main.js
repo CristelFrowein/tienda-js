@@ -20,7 +20,7 @@ let cantidadProductos = 0
 function agregarAlCarrito(opcion) {
     if (opcion > 0 && opcion <= tienda.length) {
         const producto = tienda[opcion - 1]
-        console.log(`${producto.nombre} ha sido agregado al carrito`)
+        console.log(`${producto.nombre} se agregó al carrito`)
         total += producto.precio
         cantidadProductos++
     } else {
@@ -32,7 +32,7 @@ function agregarAlCarrito(opcion) {
 
 function aplicarDescuento(total, porcentaje = 10) {
     if (total > 25000) {
-        console.log(`¡Haz superado los $25.000 en tu compra, te ganaste un descuento del ${porcentaje}%!`)
+        console.log(`¡Superaste los $25.000 en tu compra, ganaste un descuento del ${porcentaje}%!`)
         return total * (1 - porcentaje / 100) 
     }
     return total

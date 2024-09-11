@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu carrito - CF Electronic</title>
+
+    <!--JS-->
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/carrito.js"></script>
+
+    <!--Ruta CSS-->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Ruta iconos Boostrap-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="grid-container">
+    <!--HEADER Y NAV-->
+    <header>
+      <a href="../index.html"
+        ><img
+          id="logo-marca"
+          src="../img/logo-marca.png"
+          alt="Logo CF Electronic"
+      /></a>
+      <div>
+        <a href="carrito.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-shopping-cart"
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#fff0c9"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
+          </svg>
+          <span id="contadorCarrito">0</span>
+        </a>
+      </div>
+
+      <button id="menu-button" class="menu-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-menu-2"
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#fff0c9"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M4 6l16 0" />
+          <path d="M4 12l16 0" />
+          <path d="M4 18l16 0" />
+        </svg>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html#tienda">Tienda</a></li>
+          <li><a href="../index.html#nosotros">Nosotros</a></li>
+          <li><a href="../index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="presentacion-carrito">
+        <h3>¿Aún no armaste tu carrito?</h3>
+        <a href="../index.html#tienda">Ir a la tienda</a>
+      </section>
+      <div class="contenedor-seccion-carrito">
+        <section id="seccion-carrito"></section>
+        <div class="layout-carrito">
+          <h3>Total a pagar: $<span id="total-pagar">0</span></h3>
+
+          <div>
+            <button id="confirmar-compra">Confirmar Compra</button>
+
+            <button id="boton-limpiar">Limpiar Carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <section id="calificar-tienda">
+        <h2>Calificá nuestra tienda</h2>
+        <div>
+          <form id="form-calificar">
+            <label for="rating">Calificación:</label>
+            <select id="rating" name="rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+        </div>
+        
+          <label for="comentarios">Comentarios:</label>
+          <textarea name="comentarios"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <a id="logo-marca" href="../index.html">
+        <img src="../img/logo-marca.png" />
+      </a>
+    </footer>
+  </body>
+</html>

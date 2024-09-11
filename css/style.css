@@ -1,0 +1,558 @@
+/*Estilos globales*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*scroll*/
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+}
+
+body {
+  font-family: "Tilt Neon", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0c9;
+  line-height: 2;
+}
+
+p {
+  font-family: "Tilt Neon", sans-serif;
+}
+
+/*Layout grid*/
+@media (min-width: 768px), (min-width: 1280px) {
+  body {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    margin: 0 auto;
+  }
+}
+/* MEDIDAS RESPONSIVES GENERALES PARA EL MAIN */
+/* Mobile */
+main {
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*tablet y desktop*/
+@media (min-width: 768px), (min-width: 1280px) {
+  main {
+    max-width: 95%;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ESTILOS HEADER Y NAV */
+header {
+  background-color: black;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 2.5rem;
+  width: 40px;
+  height: 40px;
+  background: black;
+  color: #fff0c9;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  margin: 0 auto;
+  background: black;
+  color: #fff0c9;
+  z-index: 9999;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0.5px 5px #dfc27b;
+}
+
+.nav-menu a {
+  color: #fff0c9;
+  text-decoration: none;
+}
+
+header div a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+header div svg {
+  width: 40px;
+  height: 40px;
+}
+header div span {
+  background-color: #fff0c9;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 30px;
+  border-radius: 90%;
+  text-align: center;
+  color: black;
+}
+
+/* Estilos del footer */
+/*Tablet y desktop version*/
+footer {
+  background-color: #000000;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a img {
+  width: 100%;
+  margin-left: 2rem;
+  padding: 1rem;
+}
+
+/*mobile version*/
+@media (max-width: 767px) {
+  footer {
+    background-color: #000000;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer a img {
+    align-items: center;
+    max-width: 100%;
+  }
+}
+/* Logo interactivo: Nav - Footer */
+#logo-marca img {
+  max-width: 60%;
+  padding: 2rem;
+}
+
+#logo-marca:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/*ESTILOS DEL MAIN - INDEX*/
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+@media (min-width: 768px), (min-width: 1280px) {
+  .grid-container main {
+    margin-top: 20px;
+  }
+}
+
+/* ESTILOS SECCIÓN INDEX PRINCIPAL: */
+
+.index-principal {
+  margin-top: 100px;
+  margin-bottom: 5rem;
+}
+.index-principal div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  transition: filter 0.3s ease;
+}
+.index-principal div:hover {
+  filter: blur(2px);
+}
+.index-principal img {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .grid-container main section .index-principal {
+    margin-top: 1rem;
+  }
+}
+.grid-container main section .item-posicion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  margin-top: 0.5rem;
+  min-width: 90%;
+}
+.grid-container main section .item-posicion .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid-container main section .item-posicion .item img {
+  width: 150px;
+  margin-bottom: -10px;
+}
+.grid-container main section .item-posicion .item p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: -5px;
+}
+@media (max-width: 767px) {
+  .grid-container main section .item-posicion {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  .grid-container main section .item-posicion .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .grid-container main section .item-posicion .item img {
+    max-width: 30%;
+    margin-bottom: -10px;
+  }
+  .grid-container main section .item-posicion .item p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+.grid-container main section .index-secundario {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+/*Estilos de la seccion tienda*/
+
+.grid-container main section .index-secundario .box-producto {
+  background-color: rgb(250, 252, 233);
+  width: 100%;
+  box-shadow: 0 0 15px #dfc27b;
+  border-radius: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto;
+  gap: 1rem;
+}
+
+.tarjeta-producto {
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tarjeta-producto img {
+  margin-top: 1rem;
+  max-width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tarjeta-producto img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s linear;
+  cursor: pointer;
+}
+
+.tarjeta-producto button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  color: black;
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  width: 90%;
+  height: 50px;
+  border: 0.5px solid #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #dfc27b;
+}
+
+.tarjeta-producto button:hover {
+  cursor: pointer;
+}
+/*mobile version*/
+@media (max-width: 767px) {
+  #productos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tarjeta-producto img {
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .tarjeta-producto img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s linear;
+    cursor: pointer;
+  }
+}
+
+/*Estilos video de presentación de la tienda*/
+
+.grid-container main section div video {
+  width: 100%;
+  box-shadow: 0 0 10px #dfc27b;
+  margin-bottom: 5rem;
+}
+/* ESTILOS PARA NOSOTROS */
+
+#nosotros {
+  background-image: url("../img/logo-marca.png");
+  width: 100%;
+  position: relative;
+}
+
+#nosotros::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(6px);
+  z-index: 1;
+}
+
+.contenedor-nosotros {
+  position: relative;
+  z-index: 2;
+}
+
+.contenedor-nosotros h3, .contenedor-nosotros p {
+  text-align: center;
+  color: #fff0c9;
+  padding: 2rem;
+}
+
+.contenedor-nosotros h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.contenedor-nosotros p {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+/*Estilos para contacto*/
+
+.contacto {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+  color: #dfc27b;
+  padding: 5rem;
+  gap: 2rem;
+}
+.contacto h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contacto div {
+  padding: 1rem;
+}
+
+/*Version mobile*/
+@media (max-width: 767px) {
+  .contacto {
+    margin-right: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*HTML DEL CARRITO*/
+.contenedor-seccion-carrito {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: white;
+  max-width: 100%;
+  border-radius: 2rem;
+}
+
+#seccion-carrito {
+  max-width: 100%;
+}
+.tarjeta-carrito {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  gap: -5px;
+}
+.tarjeta-carrito img {
+  max-width: 10%;
+}
+.tarjeta-carrito button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #dfc27b;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Tilt Neon", sans-serif;
+  cursor: pointer;
+}
+.tarjeta-carrito p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.tarjeta-carrito .conjunto-botones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.contenedor-seccion-carrito h3 {
+  text-align: center;
+  margin-top: 2rem;
+}
+.layout-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.layout-carrito div {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#boton-limpiar,
+#confirmar-compra {
+  max-width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #dfc27b;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Tilt Neon", sans-serif;
+  cursor: pointer;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.presentacion-carrito {
+  margin-top: 20rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentacion-carrito h3 {
+  text-align: center;
+}
+
+.presentacion-carrito a {
+  text-decoration: none;
+  text-transform: none;
+}
+
+/*seccion de calificación*/
+
+#calificar-tienda {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+#calificar-tienda textarea {
+  width: 20rem;
+  height: 10rem;
+  resize: none;
+}
+
+#calificar-tienda button {
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px black;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Tilt Neon", sans-serif;
+  cursor: pointer;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}

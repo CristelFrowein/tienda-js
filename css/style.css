@@ -107,8 +107,6 @@ header {
   text-decoration: none;
 }
 
-
-
 /* Estilos del footer */
 /*Tablet y desktop version*/
 footer {
@@ -535,14 +533,12 @@ footer a img {
   text-transform: none;
 }
 
-
 .seccion-principal-carrito {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 
 #ir-carrito a {
   text-decoration: none;
@@ -554,20 +550,18 @@ footer a img {
   right: 0;
   transform: translateY(-50%);
   background: linear-gradient(to right, #fff0c9, black);
-  padding: 1rem; 
-  border: none; 
+  padding: 1rem;
+  border: none;
   border-radius: 15rem;
-  cursor: pointer; 
+  cursor: pointer;
   z-index: 9999;
 }
 
 #ir-carrito a i {
- 
   color: black;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: bold;
 }
-
 
 .carrito-icono {
   width: 3rem;
@@ -580,10 +574,10 @@ footer a img {
   right: 0;
   transform: translateY(-50%);
   background: linear-gradient(to right, #fff0c9, black);
-  padding: 1rem; 
-  border: none; 
+  padding: 1rem;
+  border: none;
   border-radius: 15rem;
-  cursor: pointer; 
+  cursor: pointer;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -596,5 +590,5 @@ footer a img {
 
 .carrito-icono i {
   font-weight: bold;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
 }

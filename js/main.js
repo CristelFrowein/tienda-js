@@ -39,7 +39,6 @@ function agregarAlCarrito() {
       console.log(nuevoCarrito);
       localStorage.setItem("nuevoCarrito", JSON.stringify(nuevoCarrito));
 
-
      
       Toastify({
         text: "Producto agregado al carrito",

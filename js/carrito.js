@@ -80,6 +80,8 @@ volverTienda.onclick = () => {
   window.location.href = "../index.html#tienda";
 };
 
+//eventos para confirmar compra y sweetalert
+
 document
   .getElementById("confirmar-compra")
   .addEventListener("click", function () {

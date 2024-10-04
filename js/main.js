@@ -5,6 +5,8 @@ document.getElementById("menu-button").addEventListener("click", function () {
   navMenu.style.display = navMenu.style.display === "block" ? "none" : "block";
 });
 
+
+// variables
 let nuevoCarrito = [];
 let contenedorTarjetas = document.getElementById("productos-container");
 let productos = [];

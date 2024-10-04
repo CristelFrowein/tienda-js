@@ -1,7 +1,6 @@
 // Variables
 let carritoStorage = localStorage.getItem("nuevoCarrito");
 carritoStorage = JSON.parse(carritoStorage) || [];
-
 let contenedorCarrito = document.getElementById("seccion-carrito");
 let totalPagar = document.getElementById("total-pagar");
 let contadorCarrito = document.getElementById("contadorCarrito");
@@ -21,9 +20,11 @@ function verCarrito(productoCarrito) {
       </p>
 
       <span class="conjunto-botones"> 
-      <button class="sumar-button">+</button>
+      
+      <button class="restar-button">-</button> 
       <span class="counter">1</span>
-      <button class="restar-button">-</button> <span>
+      <button class="sumar-button">+</button>
+      <span>
       
       <button class="borrar-producto" data-index="${index}"><i class="bi bi-trash"></i></button>
     `;
@@ -47,7 +48,7 @@ function verCarrito(productoCarrito) {
     button.onclick = () => {
       let counter = document.querySelectorAll(".counter")[index];
       let contador = parseInt(counter.innerHTML);
-      if (contador > 0) {
+      if (contador > 1) {
         contador--;
         counter.innerHTML = contador;
         actualizarTotal();
@@ -73,17 +74,85 @@ function verCarrito(productoCarrito) {
   actualizarContadorCarrito();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let contadorCarrito = document.getElementById("contadorCarrito");
-  let contadorGuardado = localStorage.getItem("contadorCarrito");
-  if (contadorGuardado) {
-    contadorCarrito.innerHTML = contadorGuardado;
-  }
-});
+let volverTienda = document.getElementById("volver-tienda");
 
-document.getElementById("confirmar-compra").onclick = () => {
-  window.location.href = "#calificar-tienda";
+volverTienda.onclick = () => {
+  window.location.href = "../index.html#tienda";
 };
+
+document
+  .getElementById("confirmar-compra")
+  .addEventListener("click", function () {
+    Swal.fire({
+      title: "Rellena tus datos",
+      html: `
+        <input type="text" id="nombre" class="swal2-input" placeholder="Nombre">
+        <input type="text" id="apellido" class="swal2-input" placeholder="Apellido">
+        <input type="text" id="direccion" class="swal2-input" placeholder="Dirección">
+        <input type="email" id="email" class="swal2-input" placeholder="Email">
+      `,
+      confirmButtonText: "Confirmar",
+      focusConfirm: false,
+      preConfirm: () => {
+        const nombre = Swal.getPopup().querySelector("#nombre").value;
+        const email = Swal.getPopup().querySelector("#email").value;
+        if (!nombre || !email) {
+          Swal.showValidationMessage(`Por favor, rellena ambos campos`);
+        }
+        return { nombre: nombre, email: email };
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (carritoStorage.length === 0) {
+          Swal.fire({
+            title: "¡Carrito vacío!",
+            text: "No agregaste ningún producto a tu carrito",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+          });
+        } else {
+          const productosComprados = carritoStorage
+            .map((producto) => `${producto.nombre} (Precio: $${producto.precio})`)
+            .join("<br>");
+
+          Swal.fire({
+            title: "Compra Confirmada",
+            html: `Compraste:<br>${productosComprados}`,
+            icon: "success",
+            confirmButtonText: "Calificar Tienda",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                input: "textarea",
+                inputLabel:
+                  "En CF Electronic valoramos mucho tu opinión, déjanos tu mensaje",
+                inputPlaceholder: "Escribe tu mensaje aquí...",
+                showCancelButton: true,
+                confirmButtonText: "Enviar",
+                cancelButtonText: "Cancelar",
+              }).then((calificacionResult) => {
+                if (calificacionResult.isConfirmed) {
+                  const mensaje = calificacionResult.value.trim();
+
+                  if (!mensaje) {
+                    Swal.fire({
+                      title: "Error",
+                      text: "El campo de opinión no puede estar vacío.",
+                      icon: "error",
+                      confirmButtonText: "Aceptar",
+                    });
+                  } else {
+                    Swal.fire("Agradecemos tu opinión", mensaje, "success");
+                  }
+                }
+              });
+            }
+          });
+        }
+      }
+    });
+  });
+
 
 // FUNCIONES
 
@@ -117,7 +186,7 @@ function actualizarContadorCarrito() {
     totalItems += cantidad;
   });
   contadorCarrito.innerHTML = totalItems;
-  localStorage.setItem("contadorCarrito", totalItems); 
+  localStorage.setItem("contadorCarrito", totalItems);
 }
 
 // Llamada

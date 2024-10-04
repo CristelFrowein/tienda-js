@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "Auriculares",
+        "precio": 20000,
+        "img": "./img/auriculares.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Auriculares Bluetooth",
+        "precio": 30000,
+        "img": "./img/auriculares-b.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Fundas",
+        "precio": 8000,
+        "img": "./img/fundas.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Cargador",
+        "precio": 5000,
+        "img": "./img/cargadores.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Bateria",
+        "precio": 10000,
+        "img": "./img/baterias.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Modulo de pantalla",
+        "precio": 120000,
+        "img": "./img/modulos.png"
+    }
+]

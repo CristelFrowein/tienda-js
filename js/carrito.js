@@ -98,10 +98,12 @@ document
       preConfirm: () => {
         const nombre = Swal.getPopup().querySelector("#nombre").value;
         const email = Swal.getPopup().querySelector("#email").value;
-        if (!nombre || !email) {
-          Swal.showValidationMessage(`Por favor, rellena ambos campos`);
+        const apellido = Swal.getPopup().querySelector("#apellido").value;
+        const direccion = Swal.getPopup().querySelector("#direccion").value;
+        if (!nombre || !email || !apellido || !direccion) {
+          Swal.showValidationMessage(`Por favor, debes rellenar todos los campos`);
         }
-        return { nombre: nombre, email: email };
+        return { nombre: nombre, email: email, apellido: apellido, direccion: direccion };
       }
     }).then((result) => {
       if (result.isConfirmed) {
